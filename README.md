@@ -1,6 +1,6 @@
 # TASKS DAPP PORTED TO POLYJUICE
 
-[Original repository #1 - blockchain-ethereum-contract](https://github.com/AndrewJBateman/blockchain-ethereum-contract)
+[Original repository #1 - blockchain-ethereum-contract](https://github.com/AndrewJBateman/blockchain-ethereum-contract) <br>
 [Original repository #2 - blockchain-ethereum-contract](https://github.com/x777/todo-dapp-polyjuice)
 
 ## :books: How to use:
@@ -18,5 +18,5 @@
 
 ## :camera: Screenshots
 
-![Example screenshot 1](./img/task.png)
-![Example screenshot 2](./img/task_2.png)
+![Example screenshot 1](https://user-images.githubusercontent.com/5003779/129456403-661107ae-c009-429b-92dc-8fb70183c6c2.png)
+![Example screenshot 2](https://user-images.githubusercontent.com/5003779/129456427-61954e42-3ca3-4f6b-9d51-f6d689dc8bcf.png)
