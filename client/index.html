@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Polyjuice Tasks</title>
+
+	<link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css" />
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="./main.css" />
+	<!-- Google icons -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="container py-4">
+		<div class="row">
+			<div class="col-md-4 mb-2">
+				<div class="card card-body bg-light rounded-0 mb-4">
+					<h3>
+						<span class="material-icons">assignment</span>
+						<b>Polyjuice Tasks</b>
+					</h3>
+					<div class="d-flex align-items-center">
+						<span class="material-icons"> account_balance</span>
+						<span class="ms-2">Wallets:</span>
+					</div>
+					<div class="accordion" id="myAccordion">
+						<div class="card">
+							<div class="card-header" id="headingOne">
+								<h2 class="mb-0">
+									<button type="button" class="btn btn-link" data-toggle="collapse"
+										data-target="#collapseOne">ETH:</button>
+								</h2>
+							</div>
+							<div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+								data-parent="#myAccordion">
+								<div class="card-body">
+									<span id="account"></span>
+									<!-- <p>HTML stands for HyperText Markup Language. HTML is the standard markup language for describing the structure of web pages. <a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p> -->
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="headingTwo">
+								<h2 class="mb-0">
+									<button type="button" class="btn btn-link collapsed" data-toggle="collapse"
+										data-target="#collapseTwo">Polyjuice:</button>
+								</h2>
+							</div>
+							<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+								data-parent="#myAccordion">
+								<div class="card-body">
+									<span id="polyjuice-account"></span>
+									<!-- <p>Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p> -->
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="headingThree">
+								<h2 class="mb-0">
+									<button type="button" class="btn btn-link collapsed" data-toggle="collapse"
+										data-target="#collapseThree">Deposit address:</button>
+								</h2>
+							</div>
+							<div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+								data-parent="#myAccordion">
+								<div class="card-body">
+									<span id="ck-eth"></span>
+									<!-- <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p> -->
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="headingFour">
+								<h2 class="mb-0">
+									<button type="button" class="btn btn-link collapsed" data-toggle="collapse"
+										data-target="#collapseFour">Nervos Layer 2 balance:</button>
+								</h2>
+							</div>
+							<div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+								data-parent="#myAccordion">
+								<div class="card-body">
+									<span id="ckb-balance"></span>
+									<!-- <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p> -->
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="headingFifth">
+								<h2 class="mb-0">
+									<button type="button" class="btn btn-link collapsed" data-toggle="collapse"
+										data-target="#collapseFifth">ckETH balance:</button>
+								</h2>
+							</div>
+							<div id="collapseFifth" class="collapse" aria-labelledby="headingFifth"
+								data-parent="#myAccordion">
+								<div class="card-body">
+									<span id="cketh-balance"></span>
+									<!-- <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p> -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<a id="do-deposit" target="blank" class="btn btn-primary" href="" role="button"
+						aria-expanded="false" aria-controls="collapseExample">
+						Copy & Deposit CKB
+					</a>
+				</div>
+
+			</div>
+			<div class="col-md-4">
+				<div id="tasksList"></div>
+
+			</div>
+			<div class="col-md-4">
+				<form id="taskForm" class="card card-body bg-light">
+					<h4>Save Task</h4>
+					<input type="text" id="title" class="form-control bg-light border-0 rounded-0 my-4"
+						placeholder="Task title..." autofocus />
+					<textarea id="description" rows="2" class="form-control bg-light border-0 rounded-0 my-2"
+						placeholder="Task description..."></textarea>
+					<button class="btn btn-primary">save</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="/libs/bootstrap/dist/js/bootstrap.bundle.js"></script>
+	<script src="/libs/web3/dist/web3.min.js"></script>
+	<script src="/libs/@truffle/contract/dist/truffle-contract.min.js"></script>
+	<script src="./nervos-godwoken-integration.js"></script>
+	<script src="./polyjuice.js"></script>
+	<script src="./bundle.js"></script>
+	<script src="./ui.js"></script>
+
+</body>
+
+</html>
